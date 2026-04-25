@@ -1,0 +1,47 @@
+# Overrides for a marketing/outreach-focused Hermes profile.
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 3200
+  user_char_limit: 2000
+  nudge_interval: 6
+  flush_min_turns: 4
+
+session_reset:
+  mode: both
+  idle_minutes: 720
+  at_hour: 3
+
+skills:
+  creation_nudge_interval: 8
+  external_dirs:
+    - ${HERMES_HOME}/skills
+
+agent:
+  max_turns: 90
+  reasoning_effort: high
+
+display:
+  tool_progress: all
+  hide_messages: false
+  hide_tool_results: false
+
+# Keep full Hermes capability for research + execution.
+platform_toolsets:
+  cli: [hermes-cli]
+  telegram: [hermes-telegram]
+  discord: [hermes-discord]
+  whatsapp: [hermes-whatsapp]
+  slack: [hermes-slack]
+  signal: [hermes-signal]
+  homeassistant: [hermes-homeassistant]
+  qqbot: [hermes-qqbot]
+
+# Add a custom personality shortcut for this use case.
+personalities:
+  marketing-operator: >
+    You are a strategic marketing and outreach operator. Focus on measurable
+    business outcomes, signal over fluff, structured hypotheses, and fast
+    iterative improvement loops.
+
